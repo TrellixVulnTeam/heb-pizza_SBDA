@@ -1,0 +1,94 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&family=Playfair+Display&display=swap");
+
+$bgd-color: #1c3384;
+$secondary-color: #599cff;
+$font-stack: "Montserrat", sans-serif;
+$secondary-font-stack: "Playfair Display", sans-serif;
+$text-color: black;
+$highlight-color: #6e47de;
+$submit-color: #72c87b;
+
+#Form {
+
+  display: block;
+
+  h1 {
+    color: black;
+    font-family: $font-stack;
+    margin-top: 50px;
+    text-align: center;
+  }
+
+  form {
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    padding: 0 300px;
+    margin: 75px auto;
+
+    .group {
+      position: relative;
+      padding: 15px 0 0;
+      width: 100%;
+      margin: 20px 0;
+    }
+
+    .text {
+      width: 100%;
+      border: 0;
+      border-bottom: 2px solid $highlight-color;
+      outline: 0;
+      font-size: 1.3rem;
+      color: black;
+      padding: 7px 0;
+      background: transparent;
+      transition: border-color 0.2s;
+
+      &::placeholder {
+        color: transparent;
+      }
+
+      &:placeholder-shown ~ .label {
+        font-size: 1.3rem;
+        cursor: text;
+        top: 20px;
+      }
+
+      &:focus {
+        ~ .label {
+          position: absolute;
+          top: 0;
+          display: block;
+          transition: 0.2s;
+          font-size: 1rem;
+          color: $highlight-color;
+          font-weight: 700;
+        }
+        padding-bottom: 6px;
+        font-weight: 700;
+        border-width: 3px;
+        border-image: linear-gradient(to right, $secondary-color, $highlight-color);
+        border-image-slice: 1;
+      }
+    }
+
+    .label {
+      position: absolute;
+      top: 0;
+      display: block;
+      transition: 0.2s;
+      font-size: 1rem;
+      color: $text-color;
+    }
+  }
+
+  button {
+    appearance: none;
+    padding: 10px;
+    border: none;
+    border-radius: 10px;
+    background-color: $submit-color;
+    width: 30%;
+  }
+
+}
